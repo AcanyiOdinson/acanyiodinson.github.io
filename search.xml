@@ -4,105 +4,16 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/07/14/hello-world/"/>
-      <url>/2019/07/14/hello-world/</url>
+      <title>PythonAes加解密示例代码</title>
+      <link href="/2020/09/12/python-aes/"/>
+      <url>/2020/09/12/python-aes/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 考试 </category>
-          
-          <category> 哔哩哔哩 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-            <tag> 开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>My awesome title</title>
-      <link href="/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC/"/>
-      <url>/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><blockquote><p>接口测试需要使用Python和Java实现同个AES加解密算法，</p></blockquote><ol><li>AES加密算法是一種對稱加密算法， 他有一個密匙， 即用來加密， 也用來解密，模式为CBC模式</li><li>Python-Aes加解密，实现依赖库<code>pycrypto</code>,<code>pycryptodome</code>，工作环境在Mac环境时，以上两个库都可以支持，但在PC条件下，只能支持pycryptodome</li></ol><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><pre><code class="python">class AesEncryptionModel:    def __init__(self):        # 私钥 类似 Abcs0eGRvc3Bkb3NsZGFhYQ==        self.key = base64.b64decode(&#39;&#39;)        # 向量 类似 MDM5MjASDDekkduwMTgxMg==        self.iv = base64.b64decode(&#39;&#39;)        # 加密模式        self.mode = AES.MODE_CBC        # 实例化加密器        self.cryptor = AES.new(self.key, self.mode, self.iv)        # 明文填充方法        self.BS = AES.block_size        self.PKCS7Padding = lambda s: s + (self.BS - len(s) % self.BS) * chr(self.BS - len(s) % self.BS)        # 密文去填充方法        self.unPKCS7Padding = lambda s: s[0:-ord(s[-1])]        # 明文        self.plainText = &#39;&#39;        # 密文        self.cipherText = &#39;&#39;    # 加密函数    def encrypt(self, plainText):        text = bytes(self.PKCS7Padding(plainText), encoding=&quot;utf8&quot;)        # 实例化加密器        cryptor = AES.new(self.key, self.mode, self.iv)        # AES加密之后的bytes对象        aesByteText = cryptor.encrypt(text)        # base64encode加密        base64ByteText = base64.b64encode(aesByteText)        # 转str类型        self.cipherText = str(base64ByteText, encoding=&#39;utf8&#39;)        return self.cipherText    # 解密函数    def decrypt(self, cipherText):        # base64decode解密        base64ByteText = base64.b64decode(cipherText)        # 实例化加密器        cryptor = AES.new(self.key, self.mode, self.iv)        # AES解密        aesByteText = cryptor.decrypt(base64ByteText)        # 转str类型        self.plainText = str(aesByteText, &#39;utf8&#39;)        return self.unPKCS7Padding(self.plainText)</code></pre>]]></content>
       
       
       <categories>
           
-          <category> 成人 </category>
-          
-          <category> 科学 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 暑假 </tag>
-            
-            <tag> 函数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>My awesome title</title>
-      <link href="/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC2/"/>
-      <url>/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC2/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 武术 </category>
-          
-          <category> 体育 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 杂技 </tag>
-            
-            <tag> 作业 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>My awesome title</title>
-      <link href="/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC3/"/>
-      <url>/2019/07/14/hello-world%E7%9A%84%E5%89%AF%E6%9C%AC3/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 娱乐 </category>
-          
-          <category> 日记 </category>
+          <category> 技术站 </category>
           
       </categories>
       
@@ -111,7 +22,59 @@
             
             <tag> Python </tag>
             
-            <tag> Go </tag>
+            <tag> Aes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python音频用来操作音频的库</title>
+      <link href="/2020/09/11/python-audio-library/"/>
+      <url>/2020/09/11/python-audio-library/</url>
+      
+        <content type="html"><![CDATA[<ul><li><input disabled="" type="checkbox"> audiolazy -Python 的数字信号处理包。</li><li><input disabled="" type="checkbox"> audioread – 交叉库 (GStreamer + Core Audio + MAD + FFmpeg) 音频解码。</li><li><input disabled="" type="checkbox"> beets – 一个音乐库管理工具及 MusicBrainz 标签添加工具</li><li><input disabled="" type="checkbox"> dejavu – 音频指纹提取和识别</li><li><input disabled="" type="checkbox"> django-elastic-transcoder – Django + Amazon Elastic Transcoder。</li><li><input disabled="" type="checkbox"> eyeD3 – 一个用来操作音频文件的工具，具体来讲就是包含 ID3 元信息的 MP3 文件。</li><li><input disabled="" type="checkbox"> id3reader – 一个用来读取 MP3 元数据的 Python 模块。</li><li><input disabled="" type="checkbox"> m3u8 – 一个用来解析 m3u8 文件的模块。</li><li><input disabled="" type="checkbox"> mutagen – 一个用来处理音频元数据的 Python 模块。</li><li><input disabled="" type="checkbox"> pydub – 通过简单、简洁的高层接口来操作音频文件。</li><li><input disabled="" type="checkbox"> pyechonest – Echo Nest API 的 Python 客户端</li><li><input disabled="" type="checkbox"> talkbox – 一个用来处理演讲/信号的 Python 库</li><li><input disabled="" type="checkbox"> TimeSide – 开源 web 音频处理框架。</li><li><input disabled="" type="checkbox"> tinytag – 一个用来读取MP3, OGG, FLAC 以及 Wave 文件音乐元数据的库。</li><li><input disabled="" type="checkbox"> mingus – 一个高级音乐理论和曲谱包，支持 MIDI 文件和回放功能。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Audio </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/09/10/hello-world/"/>
+      <url>/2020/09/10/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
             
         </tags>
       
