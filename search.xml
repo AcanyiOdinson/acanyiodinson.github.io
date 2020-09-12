@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>My awesome title</title>
+      <link href="/2020/09/12/python-signature/"/>
+      <url>/2020/09/12/python-signature/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><blockquote><p>公司接口测试需要对接Java，测试需要对接一套Python的签名算法</p></blockquote><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><pre><code class="python">class SignatureModel:    def __init__(self):        self.header = &#123;&quot;Content-type&quot;: &quot;application/json&quot;&#125;    # 全局签名请求格式签名    def createsignature(self, passParameter):        # 构造trace_id,去&#39;-&#39;        traceId = str(uuid.uuid4()).replace(&#39;-&#39;, &#39;&#39;)        # 当前时间戳!        timestamp = str(round(time.time() * 1000))        # 根据客户端的不同选择不同的signKey,secret_key        signKey = &#39;&#39;        secretKey = &#39;&#39;        # 默认参数,每个接口必须请求的参数        defaultParameter = &#123;&#39;signKey&#39;: signKey, &#39;timestamp&#39;: timestamp, &#39;traceId&#39;: traceId&#125;        # 合并传进来的参数及默认参数        defaultParameter.update(passParameter)        # 排序拼接key和value        sequence = &#39;&#39;        for key in sorted(defaultParameter.keys()):            # 如果参数长度大于5000，则截取前5000位            if len(str(defaultParameter[key])) &gt; 5000:                # 如果传参为列表,需要对list转换成str类型,再将单引号转换成双引号                sequence = sequence + key + str(defaultParameter[key][0:5000]).replace(&quot;&#39;&quot;, &#39;&quot;&#39;).replace(&#39; &#39;, &#39;&#39;)            else:                # 如果传参为列表,需要对list转换成str类型,再将单引号转换成双引号                sequence = sequence + key + str(defaultParameter[key]).replace(&quot;&#39;&quot;, &#39;&quot;&#39;).replace(&#39; &#39;, &#39;&#39;)        # 拼接密钥        sequence = sequence + secretKey        print(&quot;签名数据:\n&#123;&#125;&quot;.format(sequence))        # md5加密        h = hashlib.md5()        h.update(sequence.encode(&#39;utf8&#39;))        signature = h.hexdigest()[4:34].upper()        defaultParameter[&#39;signature&#39;] = signature        return defaultParameter</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 签名 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PythonAes加解密示例代码</title>
       <link href="/2020/09/12/python-aes/"/>
       <url>/2020/09/12/python-aes/</url>
